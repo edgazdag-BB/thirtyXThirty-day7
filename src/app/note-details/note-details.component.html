@@ -1,6 +1,6 @@
 <div class="flex">
   <mat-card  class="mat-elevation-z8 ">
-    <mat-card-header>Product Information</mat-card-header>
+    <mat-card-header>Note Information</mat-card-header>
     <mat-form-field appearance="standard">
       <mat-label>Note Name</mat-label>
       <input matInput id="name" name="name" type="text" required [(ngModel)]="note.name">
@@ -16,7 +16,7 @@
       <textarea matInput id="note" name="note" type="text" required [(ngModel)]="note.note"></textarea>
     </mat-form-field>
     <div class="flex">
-      <button mat-raised-button color="primary" (click)="noteUpdated.emit(note)">Save Note</button>
+      <button mat-raised-button color="primary" (click)="note.id === 0 ? noteSaved.emit(note) : noteUpdated.emit(note)">Save Note</button>
     </div>
   </mat-card>
 </div>
